@@ -1,0 +1,157 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html,
+#root {
+  height: 100%;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #f7c0cb 0%, #c3aec4 100%) fixed;
+  background-size: cover;
+}
+
+a {
+  text-decoration: none;
+  font-size: inherit;
+  color: inherit;
+}
+
+/* Textura de fundo */
+body::before {
+  content: "";
+  position: fixed; /* 🔹 garante que fica fixo atrás */
+  inset: 0;
+  background: url("https://www.transparenttextures.com/patterns/noise.png");
+  opacity: 0.12;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Layout da página */
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: relative;
+  z-index: 1; /* 🔹 conteúdo sempre acima da textura */
+}
+
+/* Conteúdo central (Landing, Todo, etc.) */
+.page-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+/* Card central */
+.landing-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  box-shadow: 2px 8px 40px rgba(32, 32, 32, 0.253);
+  max-width: 480px;
+  width: 90%; /* 🔹 deixa sempre uma margem lateral */
+  margin: 0 auto; /* 🔹 centraliza mesmo sem ocupar 100% */
+  z-index: 1;
+  transition: 0.4s ease;
+}
+
+.landing-card:hover {
+  transform: scale(1.02);
+}
+
+/* Subtítulo */
+.landing-subtitle {
+  font-size: 1rem;
+  color: #a06d6d;
+  margin-bottom: 0.5rem;
+  font-weight: 900;
+  font-family: "Playfair Display", serif;
+}
+
+/* Título */
+.landing-title {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  color: #6b2f3d;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  line-height: 1.2; /* 🔹 melhor espaçamento */
+  word-break: break-word; /* 🔹 quebra se precisar */
+}
+
+/* Texto auxiliar */
+.landing-text {
+  font-size: 1rem;
+  color: #866d6d;
+  margin-bottom: 2rem;
+}
+
+/* Botão padrão */
+.landing-button,
+.logout-btn {
+  background: #e7888b;
+  color: white;
+  border: none;
+  padding: 0.8rem 2.2rem;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.landing-button:hover,
+.logout-btn:hover {
+  background: #d96f73;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* ======================
+   📱 Responsividade
+   ====================== */
+@media (max-width: 480px) {
+  .landing-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .landing-title {
+    font-size: 1.6rem;
+  }
+
+  .landing-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .landing-text {
+    font-size: 0.9rem;
+  }
+
+  .landing-button,
+  .logout-btn {
+    padding: 0.7rem 1.8rem;
+    font-size: 0.9rem;
+  }
+}
+
+.landing-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  position: relative;
+  z-index: 1;
+}
+
+.landing-card {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
