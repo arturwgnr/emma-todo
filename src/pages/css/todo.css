@@ -224,3 +224,8 @@
   border-left: 4px solid #e7888b;
   padding-left: 0.6rem;
 }
+
+.todo-empty {
+  color: #6b2f3d;
+  font-weight: 400;
+}

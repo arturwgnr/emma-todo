@@ -124,7 +124,7 @@
   background: #8741af;
   color: #fff;
   border: none;
-  padding: 0.6rem 1.2rem;
+  padding: 0.4rem 1rem;
   border-radius: 10px;
   cursor: pointer;
   font-size: 0.9rem;
@@ -135,6 +135,57 @@
 .goal-progress-btn:hover {
   background: #a55bd8;
   transform: translateY(-2px);
+}
+
+.goal-progress-btn-2 {
+  margin-top: 1rem;
+  background: #e7888b;
+  color: #fff;
+  border: none;
+  padding: 0.4rem 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+.goal-progress-btn-2:hover {
+  background: #f0989b;
+  transform: translateY(-2px);
+}
+
+.buttons-div {
+  display: flex;
+  flex-wrap: wrap; /* 🔹 permite quebrar linha */
+  gap: 0.5rem; /* 🔹 espaçamento entre botões */
+  margin-top: 0.8rem;
+  justify-content: flex-start; /* 🔹 alinha de forma natural */
+}
+
+.goal-progress-btn,
+.goal-progress-btn-2,
+.reset-btn {
+  flex: 1 1 auto; /* 🔹 ocupa espaço mas pode encolher */
+  min-width: 100px; /* 🔹 largura mínima pra não quebrar */
+  text-align: center; /* 🔹 centraliza texto */
+}
+
+.reset-btn {
+  margin-top: 1rem;
+  background: linear-gradient(135deg, #924db9 0%, #e7888b 100%);
+  color: #fff;
+  border: none;
+  padding: 0.4rem 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: 2s ease;
+}
+
+.reset-btn:hover {
+  background: linear-gradient(135deg, #9f58c9 0%, #ec9396 100%);
 }
 
 .goal-progress-btn:disabled {
@@ -205,5 +256,54 @@
   }
   .goals-cards {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+/* ======================
+   Descrição dentro do Card
+   ====================== */
+.goal-description-input {
+  width: 100%;
+  min-height: 80px;
+  margin-top: 1rem;
+  padding: 0.8rem 1rem;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  resize: vertical; /* permite ajustar altura no desktop */
+  font-size: 0.95rem;
+  font-family: "Poppins", sans-serif;
+  color: #444;
+  background: #fafafa;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+  box-sizing: border-box;
+}
+
+.goal-description-input:focus {
+  outline: none;
+  border-color: #e7888b;
+  box-shadow: 0 0 0 2px rgba(231, 136, 139, 0.2);
+  background: #fff;
+}
+
+/* Placeholder mais suave */
+.goal-description-input::placeholder {
+  color: #aaa;
+  font-style: italic;
+}
+
+/* Mobile: ocupa tudo sem quebrar layout */
+@media (max-width: 480px) {
+  .goal-description-input {
+    min-height: 70px;
+    font-size: 0.9rem;
+    padding: 0.7rem;
+  }
+}
+
+/* iPad: mais equilibrado */
+@media (max-width: 820px) {
+  .goal-description-input {
+    min-height: 75px;
+    font-size: 0.95rem;
   }
 }

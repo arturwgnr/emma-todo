@@ -32,7 +32,7 @@ export default function Topbar() {
         <Link to="/manu-gatona/goals" className="nav-btn">
           Goals
         </Link>
-        <Link to="/reminders" className="nav-btn">
+        <Link to="/manu-gatona/reminders" className="nav-btn">
           Reminders
         </Link>
       </nav>

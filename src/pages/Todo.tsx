@@ -30,7 +30,7 @@ export default function Todo() {
     "Que preguiçosa gostosa 👄",
     "A vida tá ganha já? 🏖️",
     "Sem nada? Bora inventar algo! 🤔",
-    "Nem uma tarefa? Que milagre ✨",
+    "Nem uma tarefa? ATA ✨",
     "Deus ta vendo... 👁️👄👁️",
     "Amor socorro, virei esse emoji: 🤴🏻",
     "Acho que voce vai virar esse emoji: 🐸",

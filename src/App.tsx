@@ -2,6 +2,7 @@ import "./App.css";
 import Landing from "./pages/Landing";
 import Todo from "./pages/Todo";
 import Goals from "./pages/Goals";
+import Reminders from "./pages/Reminders";
 import Dashboard from "./pages/Dashboard";
 import Layout from "./components/Layout";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -40,6 +41,15 @@ function App() {
           element={
             <Layout>
               <Goals />
+            </Layout>
+          }
+        />
+
+        <Route
+          path="/manu-gatona/reminders"
+          element={
+            <Layout>
+              <Reminders />
             </Layout>
           }
         />

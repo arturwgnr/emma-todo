@@ -1,0 +1,187 @@
+/* ======================
+   Container Principal
+   ====================== */
+.reminders-wrapper {
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+/* ======================
+   Header
+   ====================== */
+.reminders-header {
+  background: #fff;
+  border-radius: 16px;
+  padding: 1rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 700px;
+  box-sizing: border-box;
+}
+
+.reminders-title {
+  font-family: "Playfair Display", serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #6b2f3d;
+  margin-bottom: 0.5rem;
+}
+
+.reminders-subtitle {
+  font-size: 1rem;
+  color: #866d6d;
+  margin-bottom: 1.2rem;
+}
+
+/* ======================
+   Input
+   ====================== */
+.reminders-input-area {
+  display: flex;
+  gap: 0.6rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.reminders-empty {
+  color: #6b2f3d;
+  font-weight: 500;
+}
+
+.reminders-input,
+.reminders-date {
+  flex: 1;
+  min-width: 140px;
+  max-width: 100%;
+  padding: 0.7rem 1rem;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.reminders-add-btn {
+  background: #e7888b;
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  padding: 0.7rem 1.2rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s ease;
+  flex-shrink: 0;
+}
+
+.reminders-add-btn:hover {
+  background: #d96f73;
+  transform: translateY(-2px);
+}
+
+/* ======================
+   Lista de lembretes
+   ====================== */
+.reminders-list {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  width: 100%;
+  max-width: 700px;
+}
+
+.reminder-card {
+  position: relative;
+  background: #fff;
+  border-radius: 14px;
+  padding: 1.2rem;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+  transition: 0.3s ease;
+}
+
+.reminder-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.12);
+}
+
+.reminder-card.important {
+  border-left: 5px solid #e7888b;
+  background: #fff7f7;
+}
+
+/* ======================
+   Ações
+   ====================== */
+.reminder-actions {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  display: flex;
+  gap: 0.3rem;
+}
+
+.reminder-important-btn {
+  background: transparent;
+  border: none;
+  font-size: 1.1rem;
+  cursor: pointer;
+  color: #bbb;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.reminder-important-btn:hover {
+  transform: scale(1.2);
+  color: #e7888b;
+}
+
+.reminder-delete-btn {
+  background: transparent;
+  border: none;
+  font-size: 1.1rem;
+  cursor: pointer;
+  color: #d96f73;
+  transition: transform 0.2s ease;
+}
+
+.reminder-delete-btn:hover {
+  transform: scale(1.2);
+  color: #b91c1c;
+}
+
+/* ======================
+   Conteúdo
+   ====================== */
+.reminder-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #444;
+}
+
+.reminder-date {
+  font-size: 0.9rem;
+  color: #888;
+}
+
+/* ======================
+   Responsividade
+   ====================== */
+@media (max-width: 480px) {
+  .reminders-input-area {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .reminders-add-btn {
+    width: 100%;
+  }
+}
