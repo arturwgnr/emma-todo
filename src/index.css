@@ -8,27 +8,32 @@
 body,
 html,
 #root {
-  height: 100%;
+  min-height: 100vh; /* 🔹 agora acompanha o scroll */
   font-family: "Poppins", sans-serif;
-  background: linear-gradient(135deg, #f7c0cb 0%, #c3aec4 100%) fixed;
+  background: linear-gradient(135deg, #d8328521 0%, #a00caa25 100%);
+  background-attachment: fixed; /* 🔹 fixa o gradiente */
   background-size: cover;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><text x='20' y='40' font-size='28'>💖</text><text x='120' y='60' font-size='26'>💄</text><text x='60' y='140' font-size='30'>🎀</text><text x='160' y='160' font-size='24'>🫧</text><text x='100' y='110' font-size='28'>💅</text><text x='40' y='90' font-size='22'>💕</text><text x='150' y='22' font-size='26'>💓</text><text x='80' y='180' font-size='28'>🌸</text><text x='30' y='160' font-size='26'>💘</text><text x='140' y='120' font-size='24'>💗</text></svg>")
+    repeat;
+  background-size: 150px 150px; /* controla densidade */
+  opacity: 0.05;
+  pointer-events: none;
+  z-index: -1;
+
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
 }
 
 a {
   text-decoration: none;
   font-size: inherit;
   color: inherit;
-}
-
-/* Textura de fundo */
-body::before {
-  content: "";
-  position: fixed; /* 🔹 garante que fica fixo atrás */
-  inset: 0;
-  background: url("https://www.transparenttextures.com/patterns/noise.png");
-  opacity: 0.12;
-  pointer-events: none;
-  z-index: 0;
 }
 
 /* Layout da página */
@@ -55,7 +60,7 @@ body::before {
   border-radius: 20px;
   padding: 2.5rem 2rem;
   text-align: center;
-  box-shadow: 2px 8px 40px rgba(32, 32, 32, 0.253);
+  box-shadow: 1px 1px 30px rgba(0, 0, 0, 0.281);
   max-width: 480px;
   width: 90%; /* 🔹 deixa sempre uma margem lateral */
   margin: 0 auto; /* 🔹 centraliza mesmo sem ocupar 100% */

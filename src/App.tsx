@@ -1,6 +1,7 @@
 import "./App.css";
 import Landing from "./pages/Landing";
 import Todo from "./pages/Todo";
+import Goals from "./pages/Goals";
 import Dashboard from "./pages/Dashboard";
 import Layout from "./components/Layout";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -30,6 +31,15 @@ function App() {
           element={
             <Layout>
               <Todo />
+            </Layout>
+          }
+        />
+
+        <Route
+          path="/manu-gatona/goals"
+          element={
+            <Layout>
+              <Goals />
             </Layout>
           }
         />

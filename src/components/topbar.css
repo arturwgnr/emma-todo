@@ -1,7 +1,8 @@
 /* ======================
    🔝 Topbar
    ====================== */
-.manu {
+.manu-space {
+  font-family: "Poppins", sans-serif;
   cursor: pointer;
 }
 

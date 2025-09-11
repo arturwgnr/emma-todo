@@ -11,7 +11,7 @@
   margin-top: 2rem;
   padding: 2rem;
   border-radius: 20px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  box-shadow: 1px 1px 30px rgba(0, 0, 0, 0.281);
   max-width: 600px;
   width: 90%;
   text-align: center;
@@ -161,4 +161,66 @@
     font-size: 1.05rem;
     padding: 1rem 1.6rem;
   }
+}
+
+.nav-btn {
+  color: #d96f73;
+}
+
+.todo-list li.done span {
+  text-decoration: line-through;
+  color: #aaa;
+}
+
+.save-btn {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  padding: 0.5rem 0.6rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s ease;
+  font-size: 1rem;
+}
+
+.save-btn:hover {
+  transform: scale(1.1);
+}
+
+.save-btn:active {
+  transform: scale(0.95);
+}
+
+/* Input de edição */
+.edit-input {
+  flex: 1; /* ocupa o espaço do texto */
+  padding: 0.6rem 0.3rem;
+  border-radius: 8px;
+  border: 1px solid #e7888b;
+  font-size: 1rem;
+  color: #444;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease;
+}
+
+.edit-input:focus {
+  outline: none;
+  border-color: #8741af;
+  box-shadow: 0 0 0 2px rgba(135, 65, 175, 0.2);
+}
+
+.task-day-block {
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+.task-date {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #6b2f3d;
+  margin-bottom: 0.8rem;
+  border-left: 4px solid #e7888b;
+  padding-left: 0.6rem;
 }
