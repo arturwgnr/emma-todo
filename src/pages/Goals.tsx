@@ -1,5 +1,5 @@
 import "./css/goals.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Goals() {
   interface Goal {
@@ -11,12 +11,22 @@ export default function Goals() {
     done: boolean;
   }
 
+  // 🔹 Carregar do localStorage na primeira renderização
+  const [goals, setGoals] = useState<Goal[]>(() => {
+    const saved = localStorage.getItem("savedGoals");
+    return saved ? JSON.parse(saved) : [];
+  });
+
   const [goal, setGoal] = useState("");
-  const [goals, setGoals] = useState<Goal[]>([]);
   const [editingId, setEditingId] = useState<number | null>(null);
 
+  // 🔹 Sempre que goals mudar, salvar no localStorage
+  useEffect(() => {
+    localStorage.setItem("savedGoals", JSON.stringify(goals));
+  }, [goals]);
+
   function handleAddGoal() {
-    if (!goal) return;
+    if (!goal.trim()) return;
 
     const newGoal: Goal = {
       id: Date.now(),
@@ -78,15 +88,17 @@ export default function Goals() {
 
         <div className="goals-input-area">
           <input
-          value={goal}
-          onChange={(e) => {
-         const formatted = e.target.value.charAt(0).toUpperCase() + e.target.value.slice(1);
-          setGoal(formatted);
-        }}
+            value={goal}
+            onChange={(e) => {
+              const formatted =
+                e.target.value.charAt(0).toUpperCase() +
+                e.target.value.slice(1);
+              setGoal(formatted);
+            }}
             type="text"
-        placeholder="Adicionar nova meta"
-        className="goals-input"
-/>
+            placeholder="Adicionar nova meta"
+            className="goals-input"
+          />
           <button onClick={handleAddGoal} className="goals-add-btn">
             Adicionar
           </button>
@@ -129,7 +141,9 @@ export default function Goals() {
                   onClick={() => handleDescription(g.id)}
                   className="goal-progress-btn-2"
                 >
-                  {editingId === g.id ? "Salvar descrição" : "Abrir descrição"}
+                  {editingId === g.id
+                    ? "Salvar descrição"
+                    : "Abrir descrição"}
                 </button>
               </div>
 

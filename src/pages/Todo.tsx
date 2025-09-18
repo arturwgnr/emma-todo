@@ -24,8 +24,8 @@ export default function Todo() {
   }
 
   const emptyMessages = [
-    "Nada pra fazer? Really? 🤨",
-    "Tá suave demais por aqui... 😴",
+    "Vagabundagem isso ai ein? 🤓",
+    "Sei não... 😴",
     "Zero tarefas? Nem parece você 😏",
     "Que preguiçosa gostosa 👄",
     "A vida tá ganha já? 🏖️",
@@ -37,7 +37,7 @@ export default function Todo() {
     "QUE? 😳",
     "Pleaaaase, pleaaase, please... 🎤",
     "Quer que eu invente uma tarefa? 🤖",
-     "Vagabundagem isso ai ein? 🤓"
+     
     
   ];
 

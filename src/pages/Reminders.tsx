@@ -10,15 +10,14 @@ export default function Reminders() {
     important: boolean;
   }
 
+  // 🔹 Carregar direto do localStorage
+  const [reminders, setReminders] = useState<Reminder[]>(() => {
+    const saved = localStorage.getItem("savedReminders");
+    return saved ? JSON.parse(saved) : [];
+  });
+
   const [reminder, setReminder] = useState("");
   const [date, setDate] = useState("");
-  const [reminders, setReminders] = useState<Reminder[]>([]);
-
-  // 🔹 Carregar do localStorage ao iniciar
-  useEffect(() => {
-    const saved = localStorage.getItem("savedReminders");
-    if (saved) setReminders(JSON.parse(saved));
-  }, []);
 
   // 🔹 Salvar sempre que reminders mudar
   useEffect(() => {
@@ -26,7 +25,7 @@ export default function Reminders() {
   }, [reminders]);
 
   function handleAddReminder() {
-    if (!reminder || !date) return;
+    if (!reminder.trim() || !date) return;
 
     const newReminder: Reminder = {
       id: Date.now(),
@@ -59,9 +58,9 @@ export default function Reminders() {
     );
   }
 
-  // 🔹 Ordenação: importantes primeiro, depois por data
+  // 🔹 Ordenação: importantes primeiro, depois data crescente
   const sortedReminders = [...reminders].sort((a, b) => {
-    if (a.important !== b.important) return b.important ? 1 : -1;
+    if (a.important !== b.important) return a.important ? -1 : 1;
     return a.timestamp - b.timestamp;
   });
 
@@ -108,12 +107,14 @@ export default function Reminders() {
                 <button
                   className="reminder-important-btn"
                   onClick={() => toggleImportant(r.id)}
+                  title="Marcar como importante"
                 >
                   ⭐
                 </button>
                 <button
                   className="reminder-delete-btn"
                   onClick={() => handleDelete(r.id)}
+                  title="Excluir lembrete"
                 >
                   ✖
                 </button>
